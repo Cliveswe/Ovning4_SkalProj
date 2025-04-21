@@ -322,11 +322,16 @@
             Queue<int> FIFIQueue = new();
 
             Console.Write($"F({n}) = ");
-            if(n > 2) {
+            if(n > 0) {
 
                 FIFIQueue.Enqueue(0);
                 FIFIQueue.Enqueue(1);
                 Fibonacci(0, 1, n, ref FIFIQueue);
+                int FIFOsize = FIFIQueue.Count;
+                for(int index = 0; index < FIFOsize; index++) {
+
+                    Console.Write($"{FIFIQueue.Dequeue()} ");
+                }
                 Console.WriteLine();
             }
 
@@ -340,10 +345,8 @@
             secondNumber = thirdNumber;
             stack.Enqueue(thirdNumber);
 
-            if(n > 0)
+            if(n > 2)
                 Fibonacci(firsNumber, secondNumber, n - 1, ref stack);
-
-            Console.Write($"{stack.Dequeue()} ");
         }
 
         #endregion
