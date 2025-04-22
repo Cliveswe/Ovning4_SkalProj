@@ -327,8 +327,7 @@
                 FIFIQueue.Enqueue(0);
                 FIFIQueue.Enqueue(1);
                 Fibonacci(0, 1, n, ref FIFIQueue);
-                int FIFOsize = FIFIQueue.Count;
-                for(int index = 0; index < FIFOsize; index++) {
+                while(FIFIQueue.Count > 0) {
 
                     Console.Write($"{FIFIQueue.Dequeue()} ");
                 }
